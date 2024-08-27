@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balz | Spotify Music</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://nyimpen.vercel.app/component/spotfy.css">
+    <style>
+        /* ... your CSS ... */
+
+        .iframe-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #666;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* Initially hide iframe */
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://telegra.ph/file/06e996bdc34eeeb235282.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 class="nama">balz</h1>
+            <p class="lokasi"><i class="fas fa-globe-asia"></i> Selawesi Selatan, Makassar</p>
+            <p class="bio">”Andi Muhammad Ikbal”</p>
+        </header>
+
+        <section class="spotify-section">
+            <h2>The Playlist I Listen To</h2>
+            <div class="iframe-container">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <iframe src="https://open.spotify.com/embed/playlist/3CHayncvVAyYaoQQH8Xqsi" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        </section>
+
+        <div class="social-icons">
+            <a href="https://github.com/balzz" target="_blank" class="social-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/6287842160879?text=hi+balzz" target="_blank" class="social-link" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/iikbaal21_" target="_blank" class="social-link" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/Uisproject" target="_blank" class="social-link" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+            <a href="balz-sites.vercel.app" target="_blank" class="social-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Function to show Spotify iframe after a delay
+        function showSpotify() {
+            // Get the iframe element
+            const spotifyIframe = document.querySelector('iframe');
+
+            // Get the loading indicator element
+            const loadingIndicator = document.querySelector('.loading');
+
+            // Hide the loading indicator
+            loadingIndicator.style.display = 'none';
+
+            // Show the Spotify iframe
+            spotifyIframe.style.display = 'block';
+        }
+
+        // Set a timeout to show the iframe after 5 seconds (adjust as needed)
+        setTimeout(showSpotify, 5000);
+    </script>
+</body>
+</html>
